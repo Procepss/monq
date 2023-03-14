@@ -1,0 +1,116 @@
+.integration {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url(../assets/images/integration-bg.png);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 22%;
+  padding-bottom: 4em;
+
+  @include respond-below(1200px) {
+    background-image: none;
+  }
+
+  &__titleContainer {
+    padding: 0 0.4em 3em 0.4em;
+  }
+
+  &__title {
+    @include integrationTitle($c-black);
+    text-align: center;
+    padding: 25px 0;
+    text-transform: uppercase;
+    font-family: 'HelveticaNeueCyr-Bold';
+
+    &::first-line {
+      color: #2f69ff;
+    }
+  }
+
+  &__descr {
+    @include integrationDescr();
+    // padding: 0 40px 50px 40px;
+    // text-align: center;
+  }
+
+  &__circle {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__circle-svg {
+    width: 570px;
+    height: 100%;
+
+    @include respond-above(1200px) {
+      display: none;
+    }
+
+    @include respond-below(720px) {
+      width: 320px;
+    }
+  }
+
+  &__circleDesctop-svg {
+    width: 900px;
+    height: 100%;
+
+    @include respond-below(1200px) {
+      display: none;
+    }
+
+    @include respond-above(1200px) {
+      width: 465px;
+    }
+
+    @include respond-above(1920px) {
+      width: 675px;
+    }
+
+    @include respond-above(2560px) {
+      width: 900px;
+    }
+  }
+
+  &__circle {
+    width: 100%;
+    max-width: 64em;
+    align-items: center;
+  }
+
+  &__circle-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 5em;
+
+    @include respond-above(2560px) {
+      left: -135px;
+    }
+
+    @include respond-above(1200px) {
+      flex-direction: row;
+    }
+  }
+
+  &__button {
+    font-family: 'HelveticaNeueCyr-Bold';
+    border: none;
+    @include text4($c-white);
+    padding: 0.7em 3em;
+    background-color: $c-accentOrange;
+    border-radius: 70px;
+    text-transform: uppercase;
+    cursor: pointer;
+    align-self: center;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+
+    @include respond-above(720px) {
+      align-self: flex-end;
+    }
+  }
+}
